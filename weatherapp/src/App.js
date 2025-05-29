@@ -1,5 +1,7 @@
+
+
 import React, { useState } from 'react';
-import './App.css'; // For custom styling
+import './App.css'; // Custom styles for weather cards
 
 const API_KEY = "a1b9f731aa8f4047959104004252905"; // Replace with your actual API key
 
@@ -33,6 +35,7 @@ function App() {
   return (
     <div className="App" style={{ padding: '20px', fontFamily: 'Arial' }}>
       <h2>Weather Application</h2>
+
       <input
         type="text"
         value={city}
@@ -41,7 +44,8 @@ function App() {
       />
       <button onClick={searchWeather}>Search</button>
 
-      {loading && <p>Loading data…</p>}
+      {/* ✅ Always render <p> for loading message */}
+      <p id="loadingMessage">{loading ? 'Loading data…' : ''}</p>
 
       {weather && (
         <div className="weather-cards">
@@ -68,3 +72,4 @@ function App() {
 }
 
 export default App;
+
