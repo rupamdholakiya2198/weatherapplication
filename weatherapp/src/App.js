@@ -1,9 +1,9 @@
 
 
 import React, { useState } from 'react';
-import './App.css'; // Custom styles for weather cards
+import './App.css'; 
 
-const API_KEY = "a1b9f731aa8f4047959104004252905"; // Replace with your actual API key
+const API_KEY = "a1b9f731aa8f4047959104004252905"; 
 
 function App() {
   const [city, setCity] = useState('');
@@ -44,7 +44,7 @@ function App() {
       />
       <button onClick={searchWeather}>Search</button>
 
-      {/* ✅ Always render <p> for loading message */}
+      
       <p id="loadingMessage">{loading ? 'Loading data…' : ''}</p>
 
       {weather && (
