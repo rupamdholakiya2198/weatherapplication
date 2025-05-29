@@ -76,7 +76,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const API_KEY = "a1b9f731aa8f4047959104004252905"; // Replace with your actual API key
+const API_KEY = "Your_API_KEY"; // Replace with your actual API key
 
 function App() {
   const [city, setCity] = useState("");
@@ -87,7 +87,7 @@ function App() {
     if (!city.trim()) return;
 
     setLoading(true);
-    setWeatherData(null); // Clear previous data
+    setWeatherData(null);
 
     try {
       const response = await fetch(
@@ -95,7 +95,7 @@ function App() {
       );
 
       if (!response.ok) {
-        throw new Error("City not found");
+        throw new Error("Invalid city");
       }
 
       const data = await response.json();
@@ -110,23 +110,27 @@ function App() {
   return (
     <div className="App">
       <h1>Weather App</h1>
+
+      {/* Search input and button */}
       <input
         type="text"
+        placeholder="Enter city name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        placeholder="Enter city name"
       />
       <button onClick={handleSearch}>Search</button>
 
+      {/* Loading message exactly as required */}
       {loading && <p>Loading data…</p>}
 
+      {/* Weather cards */}
       {weatherData && (
         <div className="weather-cards">
           <div className="weather-card">
             <strong>Temperature:</strong> {weatherData.current.temp_c} °C
           </div>
           <div className="weather-card">
-            <strong>Humidity:</strong> {weatherData.current.humidity} %
+            <strong>Humidity:</strong> {weatherData.current.humidity}%
           </div>
           <div className="weather-card">
             <strong>Condition:</strong> {weatherData.current.condition.text}
