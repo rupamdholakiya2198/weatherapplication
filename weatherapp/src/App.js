@@ -76,7 +76,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const API_KEY = "a1b9f731aa8f4047959104004252905"; // Replace with your actual API key
+const API_KEY = "a1b9f731aa8f4047959104004252905"; 
 
 function App() {
   const [city, setCity] = useState("");
@@ -111,7 +111,7 @@ function App() {
     <div className="App">
       <h1>Weather App</h1>
 
-      {/* Search input and button */}
+      
       <input
         type="text"
         placeholder="Enter city name"
@@ -120,10 +120,10 @@ function App() {
       />
       <button onClick={handleSearch}>Search</button>
 
-      {/* Loading message exactly as required */}
-      {loading && <p>Loading data…</p>}
+      
+      {loading && <p>Loading data...</p>}
 
-      {/* Weather cards */}
+      
       {weatherData && (
         <div className="weather-cards">
           <div className="weather-card">
