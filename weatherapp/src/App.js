@@ -76,7 +76,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const API_KEY = "Your_API_KEY"; // Replace with your actual API key
+const API_KEY = "a1b9f731aa8f4047959104004252905"; // Replace with your actual API key
 
 function App() {
   const [city, setCity] = useState("");
